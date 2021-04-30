@@ -44,6 +44,6 @@ namespace LibraryProject.Data.Model
         [Column(TypeName = "nvarchar")]
         [MaxLength(1), MinLength(1)]
         public char Yetki { get; set; }
-        public List<OduncKitap> OduncKitaplar { get; set; }
+        public virtual List<OduncKitap> OduncKitaplar { get; set; }
     }
 }

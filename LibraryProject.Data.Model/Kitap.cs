@@ -22,8 +22,8 @@ namespace LibraryProject.Data.Model
         public DateTime EklenmeTarihi { get; set; }
         [Required]
         public int YazarId { get; set; }
-        public Yazar Yazar { get; set; }
-        public List<Kategori> Kategoriler { get; set; }
+        public virtual Yazar Yazar { get; set; }
+        public virtual List<Kategori> Kategoriler { get; set; }
 
     }
 }

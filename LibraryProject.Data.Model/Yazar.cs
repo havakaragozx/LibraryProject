@@ -14,5 +14,6 @@ namespace LibraryProject.Data.Model
         [Column(TypeName = "varchar")]
         [MaxLength(50)]
         public string Ad { get; set; }
+        public virtual List<Kitap> Kitaplar { get; set; }
     }
 }

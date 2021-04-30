@@ -12,29 +12,7 @@ namespace LibraryProject.Controllers
         public ActionResult Index()
         {
             Context context = new Context();
-            List<int> kategoriIds = new List<int>();
-            kategoriIds.Add(1);
-            kategoriIds.Add(2);
-
-            List<Kategori> kategoriler = new List<Kategori>();
-            foreach (var item in kategoriIds)
-            {
-                var ktg = context.Kategoriler.FirstOrDefault(x => x.Id ==item);
-                kategoriler.Add(ktg);
-            }
-          
-            Kitap kitap = new Kitap()
-            {
-                Ad = "Veba Geceleri",
-                Adet = 100,
-                EklenmeTarihi = DateTime.Now,
-                SiraNo = "1",
-                YazarId = 1,
-                Kategoriler = kategoriler
-               
-            };
-            context.Kitaplar.Add(kitap);
-            context.SaveChanges();
+            var kitaplar = context.Kitaplar.ToList();
             return View();
         }
     }
