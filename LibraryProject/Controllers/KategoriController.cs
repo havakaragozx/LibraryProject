@@ -17,9 +17,9 @@ namespace LibraryProject.Controllers
             kategoriIds.Add(2);
 
             List<Kategori> kategoriler = new List<Kategori>();
-            foreach (var ktgId in kategoriIds)
+            foreach (var item in kategoriIds)
             {
-                var ktg = context.Kategoriler.FirstOrDefault(x => x.Id == ktgId);
+                var ktg = context.Kategoriler.FirstOrDefault(x => x.Id ==item);
                 kategoriler.Add(ktg);
             }
           
