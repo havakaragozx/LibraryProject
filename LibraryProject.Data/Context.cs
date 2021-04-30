@@ -1,4 +1,5 @@
-﻿using LibraryProject.Data.Model;
+﻿using LibraryProject.Data.Migrations;
+using LibraryProject.Data.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -13,7 +14,7 @@ namespace LibraryProject.Data
     {
         public Context():base("Context")
         {
-
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<Context, Configuration>("Context"));
         }
         public DbSet<Kategori> Kategoriler { get; set; }
         public DbSet<Kitap> Kitaplar { get; set; }
